@@ -8,50 +8,67 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Clean white background */
+    /* Dynamic gradient background */
     --background: 0 0% 100%;
-    --foreground: 220 9% 15%;
+    --background-gradient: linear-gradient(135deg, hsl(220 15% 98%) 0%, hsl(210 25% 96%) 100%);
+    --foreground: 220 20% 10%;
 
-    /* Card backgrounds */
+    /* Card backgrounds with subtle depth */
     --card: 0 0% 100%;
-    --card-foreground: 220 9% 15%;
+    --card-foreground: 220 20% 10%;
+    --card-gradient: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 15% 98%) 100%);
 
     /* Popover styling */
     --popover: 0 0% 100%;
-    --popover-foreground: 220 9% 15%;
+    --popover-foreground: 220 20% 10%;
 
-    /* Primary blue for trust and professionalism */
-    --primary: 213 94% 50%;
+    /* Vibrant primary with gradient */
+    --primary: 213 94% 55%;
+    --primary-glow: 213 100% 65%;
+    --primary-dark: 213 94% 45%;
     --primary-foreground: 0 0% 100%;
+    --primary-gradient: linear-gradient(135deg, hsl(213 94% 55%) 0%, hsl(213 100% 65%) 100%);
 
-    /* Soft gray sections */
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 220 9% 15%;
+    /* Rich secondary colors */
+    --secondary: 210 30% 94%;
+    --secondary-foreground: 220 20% 10%;
+    --secondary-gradient: linear-gradient(145deg, hsl(210 30% 94%) 0%, hsl(210 25% 90%) 100%);
 
-    /* Muted backgrounds and text */
-    --muted: 210 20% 96%;
-    --muted-foreground: 220 6% 46%;
+    /* Enhanced muted colors */
+    --muted: 210 25% 92%;
+    --muted-foreground: 220 15% 40%;
 
-    /* Orange accent for energy and action */
-    --accent: 25 95% 58%;
+    /* Vibrant orange accent with gradient */
+    --accent: 25 95% 60%;
+    --accent-glow: 25 100% 70%;
+    --accent-dark: 25 95% 50%;
     --accent-foreground: 0 0% 100%;
+    --accent-gradient: linear-gradient(135deg, hsl(25 95% 60%) 0%, hsl(25 100% 70%) 100%);
 
     /* Destructive styling */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders and inputs */
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 213 94% 50%;
+    /* Modern borders and inputs */
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 213 94% 55%;
 
-    /* Custom service repair theme tokens */
-    --section-bg: 210 20% 98%;
-    --card-shadow: 220 10% 85%;
-    --success: 142 76% 36%;
+    /* Enhanced service repair theme tokens */
+    --section-bg: 210 25% 97%;
+    --section-gradient: linear-gradient(180deg, hsl(210 25% 97%) 0%, hsl(210 20% 95%) 100%);
+    --card-shadow: 220 15% 80%;
+    --success: 142 76% 40%;
     --success-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    /* Modern shadows and glows */
+    --shadow-soft: 0 4px 20px -2px hsl(220 25% 70% / 0.15);
+    --shadow-medium: 0 8px 30px -4px hsl(220 25% 60% / 0.2);
+    --shadow-large: 0 16px 40px -8px hsl(220 25% 50% / 0.25);
+    --glow-primary: 0 0 30px hsl(213 100% 65% / 0.4);
+    --glow-accent: 0 0 30px hsl(25 100% 70% / 0.4);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 

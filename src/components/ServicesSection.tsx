@@ -48,13 +48,17 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="services" className="bg-section-bg py-16 lg:py-24">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+    <section id="services" className="bg-gradient-section py-16 lg:py-24 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/5 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Our Services
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             We repair all major appliance brands with certified technicians 
             and genuine parts. Fast, reliable service you can trust.
           </p>
@@ -64,22 +68,26 @@ const ServicesSection = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card key={index} className="bg-card hover:shadow-lg transition-shadow duration-300 border-0">
+              <Card 
+                key={index} 
+                className="bg-gradient-card hover:shadow-large hover:scale-105 transition-all duration-500 border-0 rounded-2xl group animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardHeader className="text-center">
-                  <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <IconComponent className="h-8 w-8 text-primary" />
+                  <div className="mx-auto w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center mb-6 group-hover:animate-float transition-all duration-300">
+                    <IconComponent className="h-10 w-10 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <CardTitle className="text-xl font-semibold">
+                  <CardTitle className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <CardDescription className="text-muted-foreground mb-6">
+                  <CardDescription className="text-muted-foreground mb-8 leading-relaxed">
                     {service.description}
                   </CardDescription>
                   <Button 
                     variant="outline" 
-                    className="border-accent text-accent hover:bg-accent hover:text-white"
+                    className="bg-gradient-accent border-0 text-white hover:scale-105 hover:shadow-glow-accent transition-all duration-300 rounded-xl px-6 py-3 font-semibold"
                     onClick={scrollToContact}
                   >
                     Request Repair
